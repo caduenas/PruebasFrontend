@@ -1,0 +1,12 @@
+@if (cadenaResult$ | async; as resulObject) {
+    <ul>
+        @for (item of resulObject.ejemplos ; track item.id) {
+            <li>
+                <p>{{item.creado_en}}</p>
+            </li>
+        }
+    </ul>
+    <div>
+        <app-envio-datos></app-envio-datos>
+    </div>
+}
