@@ -4,6 +4,8 @@ import { Observable, materialize } from 'rxjs';
 import { MatrizDatos } from '../../intrfaces/datos';
 import { CadenasService } from '../../core/services/cadenas.service';
 import { FormControl, FormsModule } from '@angular/forms';
+import { MoldeUsers } from '../../intrfaces/users';
+import { UsersService } from '../../core/services/user_services/users.service';
 
 @Component({
   selector: 'app-envio-datos',
@@ -13,15 +15,15 @@ import { FormControl, FormsModule } from '@angular/forms';
   styleUrl: './envio-datos.component.css'
 })
 export class EnvioDatosComponent{
-  public cadenaSent$!: Observable<MatrizDatos>;
-  constructor(private service: CadenasService){}
-  datos: MatrizDatos = {
-    campo1: 'valor por defecto',
-    campo2: 'valor por defecto'
+  public cadenaSent$!: Observable<MoldeUsers>;
+  constructor(private service: UsersService){}
+  datos: MoldeUsers = {
+    name: '',
+    password: ''
   }
   enviarDatos(){
     console.log("entra");
-    this.service.sentChain(this.datos).subscribe(
+    this.service.createuser(this.datos).subscribe(
       (Response) => {
         console.log('Respuesta del API', Response);
       },

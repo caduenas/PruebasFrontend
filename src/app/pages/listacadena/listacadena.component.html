@@ -1,8 +1,9 @@
 @if (cadenaResult$ | async; as resulObject) {
     <ul>
-        @for (item of resulObject.ejemplos ; track item.id) {
+        @for (item of resulObject.usuarios ; track item.id) {
             <li>
-                <p>{{item.creado_en}}</p>
+                <p>{{item.name}}</p>
+                <p>{{item.password}}</p>
             </li>
         }
     </ul>
