@@ -19,12 +19,14 @@ export class ListacadenaComponent implements OnInit{
 
   datosNuevo: MoldeUsers = {
     name: '',
-    password: ''
+    password: '',
+    correo: ''
   }
 
   datosEdit: MoldeUsers = {
     name: '',
-    password: ''
+    password: '',
+    correo: ''
   }
 
   UsuarioseleccionadoEdit: string = "";

@@ -2,6 +2,7 @@ export interface User{
     id: string;
     name: string;
     password: string;
+    correo: string;
 }
 
 export interface ResultUsers{
@@ -11,4 +12,5 @@ export interface ResultUsers{
 export interface MoldeUsers{
     name: string;
     password: string;
+    correo: string;
 }
