@@ -10,7 +10,7 @@
         <p>Selecione un algoritmo Hash</p>       
     </div>
     <div class="col-4 row">
-        <select [(ngModel)]="HashSelecionado" >
+        <select name="HashSelecionado" [(ngModel)]="HashSelecionado" >
             <option value="MD5">MD5</option>
             <option value="SHA-1">SHA-1</option>
             <option value="SHA-256">SHA-256</option>
@@ -27,7 +27,7 @@
 <div class="row">
     <div class="col-5"></div>
     <div class="col-4 row">
-        <textarea [(ngModel)]="Cadena" cols="50" rows="10"></textarea>
+        <textarea name="Valor" [(ngModel)]="Valor" cols="50" rows="10"></textarea>
     </div>
 </div>
 <div class="row my-4">
@@ -35,18 +35,21 @@
         <p>Hash de archivos</p>
     </div>
     <div class="col-4 text-center">
-        <input type="file" [(ngModel)]="archivoInput">
+        <input name="archivoInput" type="file" (change)="onFileSelected($event)">
     </div>
 </div>
 <div class="row">
     <div class="col-5"></div>
     <div class="col-4 row">
-        <button class="btn btn-warning" type="button">Generar Hash</button>
+        <button (click)="generarCadena()" class="btn btn-warning" type="button">Generar Hash</button>
     </div>
     
 </div>
 <div class="row">
     <div class="col-5 text-center my-4">
-        <p [(ngModel)]="resultado">Resultado:</p>
+        <p>Resultado:</p>
+    </div>
+    <div class="col-4 my-4">
+        <p>{{resultado}}</p>
     </div>    
 </div>

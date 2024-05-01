@@ -72,7 +72,7 @@ export class ListacadenaComponent implements OnInit{
   eliminarDatos(){
     this.service.deleteuser(parseInt(this.UsuarioseleccionadoDelete)).subscribe(
       (response) => {
-        console.log('Respuesta del API', Response);
+        console.log('Respuesta del API', response);
         this.cargarDatos();
       },
       (error) =>{
