@@ -21,7 +21,7 @@ export class SignUpComponent {
     correo: ''
   }
   repeatpassword: string = '';
-  errormessage: string= '';
+  errorMessage: string= '';
 
   crearUsuario(){
     if(this.validarRequisitos()){
@@ -35,12 +35,35 @@ export class SignUpComponent {
       )
     }
   }
-  validarRequisitos(){
-    if (this.datosNuevo.password === this.repeatpassword) {
-      return true;
-    }else{
-      this.errormessage = 'Las contraseñas no coinciden'
+validarRequisitos() {
+    const password = this.datosNuevo.password;
+    const repeatPassword = this.repeatpassword;
+
+    // Verificar si las contraseñas coinciden
+    if (password !== repeatPassword) {
+        this.errorMessage = 'Las contraseñas no coinciden';
+        return false;
     }
-    return false;
+
+    // Verificar la longitud mínima de la contraseña
+    if (password.length < 10) {
+        this.errorMessage = 'La contraseña debe tener al menos 10 caracteres';
+        return false;
+    }
+
+    // Verificar si la contraseña contiene al menos una letra mayúscula
+    if (!/[A-Z]/.test(password)) {
+        this.errorMessage = 'La contraseña debe contener al menos una letra mayúscula';
+        return false;
+    }
+
+    // Verificar si la contraseña contiene al menos un carácter especial
+    if (!/[$&+,:;=?@#|'<>.^*()%!-]/.test(password)) {
+        this.errorMessage = 'La contraseña debe contener al menos un carácter especial';
+        return false;
+    }
+
+    // Si la contraseña cumple con todos los requisitos, retornar true
+    return true;
   }
 }
