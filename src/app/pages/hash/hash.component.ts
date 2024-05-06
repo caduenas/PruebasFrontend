@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Cadenahash } from '../../intrfaces/cadenahash';
 import { RequesthashService } from '../../core/services/hashServices/requesthash.service';
+import { AuthServiceService } from '../../core/services/autentificacion/auth-service.service'; // Importa el servicio de autenticación
 
 @Component({
   selector: 'app-hash',
@@ -12,18 +13,18 @@ import { RequesthashService } from '../../core/services/hashServices/requesthash
   styleUrl: './hash.component.css'
 })
 export class HashComponent {
-  constructor(private service: RequesthashService){}
+  constructor(private service: RequesthashService, private authService: AuthServiceService){}
   fileContent: string | ArrayBuffer | null = null;
   HashSelecionado: string = '';
   Valor: string = ""
   Cadena: Cadenahash = {
     cadena: "",
-    hashmetod: ""
+    hashmethod: ""
   };
   archivoInput: string = '';
   resultado: string = '';
   generarCadena(){
-    this.Cadena.hashmetod = this.HashSelecionado
+    this.Cadena.hashmethod = this.HashSelecionado
     if (this.fileContent) {
       this.Cadena.cadena = this.fileContent.toString();
     }else{

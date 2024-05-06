@@ -4,6 +4,7 @@ import { AsyncPipe } from '@angular/common';
 import { UsersService } from '../../core/services/user_services/users.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AuthServiceService } from '../../core/services/autentificacion/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor(private service: UsersService, private router: Router){}
+  constructor(private service: AuthServiceService, private router: Router){}
   moldeLogin: MoldeLogin = {
-    correo: '',
+    email: '',
     password: '',
   }
   errorMessage: string = '';
@@ -23,7 +24,7 @@ export class LoginComponent {
   login(){
     this.service.loginuser(this.moldeLogin).subscribe(
       (response) =>{
-        console.log(response)
+        this.service.setToken(response.token);
         this.router.navigate(['Hashing']);
       },
       (error) =>{

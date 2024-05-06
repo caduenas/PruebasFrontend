@@ -4,21 +4,27 @@
             <div class="d-flex flex-wrap align-items-left justify-content-center justify-content-lg-start">
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li>
-                        <a href="" class="nav-link px-2 text-white">Home</a>
+                        <button href="" class="nav-link px-2 text-white">Home</button>
                     </li>
                     <li>
-                        <a href="" class="nav-link px-2 text-white" aria-current="page" routerLink="Hashing">Hashing</a>
+                        @if (isLoggedIn()) {
+                            <button href="" class="nav-link px-2 text-white" aria-current="page" routerLink="Hashing">Hashing</button>
+                        }
                     </li>
                     <li>
-                        <a href="" class="nav-link px-2 text-white">About us</a>
+                        <button (click)="onClick()" href="" class="nav-link px-2 text-white">About us</button>
                     </li>
                 </ul>
     
             </div>
         </div>
         <div class="text-end col-2">
-            <button type="button" class="btn btn-outline-light me-2" routerLink="Login">Login</button>
-            <button type="button" class="btn btn-warning" routerLink="Sign-up">Sign-up</button>
+            @if (isLoggedIn()) {
+                <button (click)="logout()" type="button" class="btn btn-warning" routerLink="">Logout</button>
+            }@else {
+               <button [disabled]="isLoggedIn()" type="button" class="btn btn-outline-light me-2" routerLink="Login">Login</button>
+               <button [disabled]="isLoggedIn()" type="button" class="btn btn-warning" routerLink="Sign-up">Sign-up</button>
+            }        
         </div>
     </div>
 </header>

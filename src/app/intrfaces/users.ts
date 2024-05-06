@@ -11,6 +11,7 @@ export interface ResultUsers{
 
 export interface Mensaje{
     mensaje: string
+    token: string
 }
 
 export interface MoldeUsers{
@@ -20,6 +21,6 @@ export interface MoldeUsers{
 }
 
 export interface MoldeLogin{
-    correo: string;
+    email: string;
     password: string;
 }

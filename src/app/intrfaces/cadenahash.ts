@@ -1,6 +1,6 @@
 export interface Cadenahash{
     cadena: string;
-    hashmetod: string;
+    hashmethod: string;
 }
 export interface hashResult{
     hash: string;
