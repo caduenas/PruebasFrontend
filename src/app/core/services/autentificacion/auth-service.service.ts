@@ -8,7 +8,7 @@
   })
   export class AuthServiceService {
     private token: string | null = null;
-    private apiURL = 'http://127.0.0.1:8000/api'
+    private apiURL = 'https://pruebasbackend.onrender.com/api'
     constructor(private http: HttpClient) {
       const storedToken = localStorage.getItem('token');
       if (storedToken !== null) {
