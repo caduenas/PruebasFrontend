@@ -14,10 +14,11 @@ export interface Mensaje{
     token: string
 }
 
+
 export interface MoldeUsers{
-    name: string;
+    username: string;
+    email: string;
     password: string;
-    correo: string;
 }
 
 export interface MoldeLogin{

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MoldeLogin } from '../../intrfaces/users';
 import { AsyncPipe } from '@angular/common';
-import { UsersService } from '../../core/services/user_services/users.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthServiceService } from '../../core/services/autentificacion/auth-service.service';

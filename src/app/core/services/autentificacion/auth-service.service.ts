@@ -19,7 +19,7 @@
       return this.http.post<Mensaje>(`${this.apiURL}/login/`, datos)
     }
     createuser(datos: MoldeUsers): Observable<Mensaje>{
-      return this.http.post<Mensaje>(`${this.apiURL}/usuarios/registro/`, datos)
+      return this.http.post<Mensaje>(`${this.apiURL}/registro/`, datos)
     }
     setToken(token: string){
       this.token = token;
