@@ -4,7 +4,7 @@
             <div class="d-flex flex-wrap align-items-left justify-content-center justify-content-lg-start">
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li>
-                        <button href="" class="nav-link px-2 text-white">Home</button>
+                        <button href="" class="nav-link px-2 text-white" routerLink="Inicio">Inicio</button>
                     </li>
                     <li>
                         @if (isLoggedIn()) {
@@ -12,7 +12,7 @@
                         }
                     </li>
                     <li>
-                        <button (click)="onClick()" href="" class="nav-link px-2 text-white">About us</button>
+                        <button (click)="onClick()" href="" class="nav-link px-2 text-white" routerLink="Nosotros">Sobre Nosotros</button>
                     </li>
                 </ul>
     
