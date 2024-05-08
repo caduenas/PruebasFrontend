@@ -13,7 +13,7 @@ import { AuthServiceService } from '../../core/services/autentificacion/auth-ser
   styleUrl: './hash.component.css'
 })
 export class HashComponent {
-  constructor(private service: RequesthashService, private authService: AuthServiceService){}
+  constructor(private service: AuthServiceService){}
   fileContent: string | ArrayBuffer | null = null;
   HashSelecionado: string = '';
   Valor: string = ""

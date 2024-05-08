@@ -2,6 +2,7 @@
   import { Injectable } from '@angular/core';
   import { Mensaje, MoldeLogin, MoldeUsers } from '../../../intrfaces/users';
   import { Observable } from 'rxjs';
+import { Cadenahash, hashResult } from '../../../intrfaces/cadenahash';
 
   @Injectable({
     providedIn: 'root'
@@ -45,5 +46,9 @@
     deleteToken(){
       this.token = null;
       localStorage.removeItem('token')
+    }
+    Crearhash(cadena: Cadenahash): Observable<hashResult> {
+      const headers = this.getHeaders();
+      return this.http.post<hashResult>(`${this.apiURL}/hash/`, cadena, {headers});
     }
   }

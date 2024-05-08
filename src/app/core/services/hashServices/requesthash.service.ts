@@ -13,9 +13,6 @@ export class RequesthashService {
 
   constructor(private http: HttpClient, private authservice: AuthServiceService) { }
 
-  Crearhash(cadena: Cadenahash): Observable<hashResult> {
-    const headers = this.authservice.getHeaders();
-    return this.http.post<hashResult>(`${this.apiURL}/hash/`, cadena, {headers});
-  }
+
 }
 
