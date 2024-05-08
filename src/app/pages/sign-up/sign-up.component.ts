@@ -32,7 +32,9 @@ export class SignUpComponent {
           this.router.navigate(['Hashing'])
         },
         (error) =>{
-          console.error('Error al enviar datos al API', error);
+          if(error.status === 400){
+            this.errorMessage = "Los datos registrados son invalidos.";
+          }
         }
       )
     }

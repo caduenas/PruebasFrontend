@@ -28,7 +28,9 @@ export class LoginComponent {
       },
       (error) =>{
         if (error.status === 400) {
-          this.errorMessage = 'Usuario o contraseña incorrectos';
+          this.errorMessage = 'Usuario o contraseña incorrectos.';
+        }else if(error.status === 404){
+          this.errorMessage = 'Usuario no registrado.';
         }else{
           this.errorMessage = 'Error en el servidor. Inténtelo de nuevo más tarde.';
         }

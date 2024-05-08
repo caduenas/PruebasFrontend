@@ -23,6 +23,7 @@ export class HashComponent {
   };
   archivoInput: string = '';
   resultado: string = '';
+  valueError: string = '';
   generarCadena(){
     this.Cadena.hashmethod = this.HashSelecionado
     if (this.fileContent) {
@@ -32,12 +33,14 @@ export class HashComponent {
     }
     this.service.Crearhash(this.Cadena).subscribe(
       (Response) =>{
-        console.log('Respuesta de la API',Response)
         this.resultado = Response.hash;
-        console.log("El valor es: ",this.resultado)
       },
       (error) =>{
-        console.error('Error al eviar datos', error)
+        if(error.status === 401){
+          this.valueError = "No esta autorizado";
+        }else{
+          this.valueError = "Error en el servidor";
+        }
       }
     )
   }
