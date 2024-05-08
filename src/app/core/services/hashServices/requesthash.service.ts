@@ -9,7 +9,7 @@ import { AuthServiceService } from '../autentificacion/auth-service.service';
   providedIn: 'root'
 })
 export class RequesthashService {
-  private apiURL = 'https://pruebasbackend.onrender.com//api';
+  private apiURL = 'https://pruebasbackend.onrender.com/api';
 
   constructor(private http: HttpClient, private authservice: AuthServiceService) { }
 
