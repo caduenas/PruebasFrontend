@@ -1,72 +1,71 @@
-<div class="row">
-    <div class="col-4">
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <h2>Generar Hash</h2>
+        </div>    
     </div>
-    <div class="col-4 text-center">
-        <h2>Generar Hash</h2>
-    </div>    
-</div>
-<div class="row my-4">
-    @if (valueError) {
-        <p class="my-3 text-danger border border-danger text-center">Se ha generado un error en la creacion del hash {{valueError}}</p>
-    }
-    <div class="col-5 text-center">
-        <div class="row">
-            <div class="col-5"> </div>
-            <div class="col-3"></div>
-            <div class="col-4">
-                <p >Selecione un algoritmo Hash</p>
+    <div class="row my-4">
+        @if (valueError) {
+            <p class="my-3 text-danger border border-danger text-center">Se ha generado un error en la creación del hash {{valueError}}</p>
+        }
+        <div class="col-5 text-center">
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col-4">
+                    <p>Seleccione un algoritmo Hash</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-4 row">
-        <select name="HashSelecionado" class="text-center" [(ngModel)]="HashSelecionado" >
-            <option value="MD5">MD5</option>
-            <option value="SHA-1">SHA-1</option>
-            <option value="SHA-256">SHA-256</option>
-            <option value="SHA-384">SHA-384</option>
-            <option value="SHA-512">SHA-512</option>
-        </select>
-    </div>
-</div>
-<div class="row">
-    <div class="col-5 text-center">
-        <div class="row">
-            <div class="col-5"> </div>
-            <div class="col-2"></div>
-            <div class="col-5">
-                <p >Escribe la cadema que deseas convertir</p>
-            </div>
+        <div class="col-4 row">
+            <select name="HashSelecionado" class="form-select" [(ngModel)]="HashSelecionado">
+                <option value="MD5">MD5</option>
+                <option value="SHA-1">SHA-1</option>
+                <option value="SHA-256">SHA-256</option>
+                <option value="SHA-384">SHA-384</option>
+                <option value="SHA-512">SHA-512</option>
+            </select>
         </div>
     </div>
-    <div class="col-4 row">
-        <textarea name="Valor" [(ngModel)]="Valor" cols="50" rows="10"></textarea>
-    </div>
-</div>
-<div class="row my-4">
-    <div class="col-5 text-center">
-        <div class="row">
-            <div class="col-5"> </div>
-            <div class="col-2"></div>
-            <div class="col-5">
-                <p>Selecciona un archivo que deseas convertir</p>
+    <div class="row">
+        <div class="col-5 text-center">
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col-5">
+                    <p>Escribe la cadena que deseas convertir</p>
+                </div>
             </div>
         </div>
+        <div class="col-4 row">
+            <textarea name="Valor" [(ngModel)]="Valor" class="form-control" cols="50" rows="10"></textarea>
+        </div>
     </div>
-    <div class="col-4 text-center">
-        <input name="archivoInput" type="file" (change)="onFileSelected($event)">
+    <div class="row my-4">
+        <div class="col-5 text-center">
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col-5">
+                    <p>Selecciona un archivo que deseas convertir</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <input name="archivoInput" type="file" class="form-control-file" (change)="onFileSelected($event)">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-4 row my-4">
+            <button (click)="generarCadena()" class="btn btn-warning w-100" type="button">Generar Hash</button>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-5"></div>
+        <div class="col-4 text-center"><p>Resultado</p></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-5"></div>
+        <div style="overflow-wrap: break-word;" class="col-4 text-center"><p>{{resultado}}</p></div>
     </div>
 </div>
-<div class="row">
-    <div class="col-5"></div>
-    <div class="col-4 row my-4">
-        <button (click)="generarCadena()" class="btn btn-warning" type="button">Generar Hash</button>
-    </div>
-</div>
-<div class="row mt-4">
-    <div class="col-5"></div>
-    <div class="col-4 text-center"><p>Resultado</p></div>
-</div>
-<div class="row mt-4">
-    <div class="col-5"></div>
-    <div style="overflow-wrap: break-word;" class="col-4 text-center"><p>{{resultado}}</p></div>
-</div>
+    

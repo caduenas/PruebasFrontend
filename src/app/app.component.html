@@ -1,37 +1,39 @@
-<header class="p-3 text-bg-dark">
-    <div class="row">
-        <div class="container mx-3 col-9">
-            <div class="d-flex flex-wrap align-items-left justify-content-center justify-content-lg-start">
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li>
-                        <button href="" class="nav-link px-2 text-white" routerLink="Inicio">Inicio</button>
-                    </li>
-                    <li>
-                        @if (isLoggedIn()) {
-                            <button href="" class="nav-link px-2 text-white" aria-current="page" routerLink="Hashing">Hashing</button>
-                        }
-                    </li>
-                    <li>
-                        <button (click)="onClick()" href="" class="nav-link px-2 text-white" routerLink="Nosotros">Sobre Nosotros</button>
-                    </li>
-                </ul>
-    
+<header class="p-3 text-dark bg-dark">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container mx-3 col-9">
+                <div class="d-flex flex-wrap align-items-left justify-content-center justify-content-lg-start">
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li>
+                            <button href="" class="nav-link px-2 text-white" routerLink="">Inicio</button>
+                        </li>
+                        <li>
+                            @if (isLoggedIn()) {
+                                <button href="" class="nav-link px-2 text-white" aria-current="page" routerLink="Hashing">Hashing</button>
+                            }
+                        </li>
+                        <li>
+                            <button (click)="onClick()" href="" class="nav-link px-2 text-white" routerLink="Nosotros">Sobre Nosotros</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="text-end col-2">
-            @if (isLoggedIn()) {
-                <button (click)="logout()" type="button" class="btn btn-warning" routerLink="">Logout</button>
-            }@else {
-               <button [disabled]="isLoggedIn()" type="button" class="btn btn-outline-light me-2" routerLink="Login">Login</button>
-               <button [disabled]="isLoggedIn()" type="button" class="btn btn-warning" routerLink="Sign-up">Sign-up</button>
-            }        
+            <div class="text-end col-2">
+                @if (isLoggedIn()) {
+                    <button (click)="logout()" type="button" class="btn btn-warning" routerLink="">Logout</button>
+                } @else {
+                    <button [disabled]="isLoggedIn()" type="button" class="btn btn-outline-light me-2" routerLink="Login">Login</button>
+                    <button [disabled]="isLoggedIn()" type="button" class="btn btn-warning" routerLink="Sign-up">Sign-up</button>
+                }
+            </div>
         </div>
     </div>
 </header>
+
 <router-outlet></router-outlet>
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
-        <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Hashing</span>
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li class="ms-3">
@@ -39,9 +41,7 @@
             </a>
         </li>
         <li class="ms-3">
-            <a href="" class="text-body-secondary">Instagram
-            </a>
+            <a href="" class="text-body-secondary">Instagram</a>
         </li>
     </ul>
 </footer>
-
