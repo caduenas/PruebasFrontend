@@ -1,27 +1,27 @@
 <header class="p-3 text-dark bg-dark">
     <div class="container-fluid">
-        <div class="row">
-            <div class="container mx-3 col-9">
-                <div class="d-flex flex-wrap align-items-left justify-content-center justify-content-lg-start">
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li>
-                            <button href="" class="nav-link px-2 text-white" routerLink="">Inicio</button>
+        <div class="row align-items-center">
+            <div class="col-lg-9">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <button class="nav-link px-2 text-white" routerLink="">Inicio</button>
                         </li>
-                        <li>
+                        <li class="nav-item">
                             @if (isLoggedIn()) {
-                                <button href="" class="nav-link px-2 text-white" aria-current="page" routerLink="Hashing">Hashing</button>
+                                <button class="nav-link px-2 text-white" aria-current="page" routerLink="Hashing">Hashing</button>
                             }
                         </li>
-                        <li>
-                            <button (click)="onClick()" href="" class="nav-link px-2 text-white" routerLink="Nosotros">Sobre Nosotros</button>
+                        <li class="nav-item">
+                            <button (click)="onClick()" class="nav-link px-2 text-white" routerLink="Nosotros">Sobre Nosotros</button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="text-end col-2">
+            <div class="col-lg-3 text-end">
                 @if (isLoggedIn()) {
-                    <button (click)="logout()" type="button" class="btn btn-warning" routerLink="">Logout</button>
-                } @else {
+                    <button (click)="logout()" type="button" class="btn btn-warning">Logout</button>
+                }@else {
                     <button [disabled]="isLoggedIn()" type="button" class="btn btn-outline-light me-2" routerLink="Login">Login</button>
                     <button [disabled]="isLoggedIn()" type="button" class="btn btn-warning" routerLink="Sign-up">Sign-up</button>
                 }
@@ -29,7 +29,6 @@
         </div>
     </div>
 </header>
-
 <router-outlet></router-outlet>
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
