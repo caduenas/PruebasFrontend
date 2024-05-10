@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Cadenahash } from '../../intrfaces/cadenahash';
-import { RequesthashService } from '../../core/services/hashServices/requesthash.service';
 import { AuthServiceService } from '../../core/services/autentificacion/auth-service.service'; // Importa el servicio de autenticación
 
 @Component({
