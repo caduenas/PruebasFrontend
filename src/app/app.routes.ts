@@ -4,6 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { TutorialOpenvasComponent } from './pages/tutorial-openvas/tutorial-openvas.component';
+import { TutorialPfsenseComponent } from './pages/tutorial-pfsense/tutorial-pfsense.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +32,15 @@ export const routes: Routes = [
         path: 'Nosotros',
         title: 'Nosotros',
         component: AboutUsComponent
+    },
+    {
+        path: 'tutorial-Pfesense',
+        title: 'tutorial-Pfesense',
+        component: TutorialPfsenseComponent
+    },
+    {
+        path: 'tutorial-Openvas',
+        title: 'tutorial-Openvas',
+        component: TutorialOpenvasComponent
     },
 ];

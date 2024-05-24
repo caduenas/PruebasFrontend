@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { CommonModule } from '@angular/common';
 import { AuthServiceService } from './core/services/autentificacion/auth-service.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink],
+  imports: [RouterOutlet,RouterLink,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  isNavbarCollapsed = true;
+  isDropdownOpen = false;
   title = 'frontend';
   constructor(private authService: AuthServiceService, private router: Router){}
   isLoggedIn(): boolean {
@@ -27,5 +28,8 @@ export class AppComponent {
     this.authService.deleteToken()
     console.log(this.authService.getToken)
     this.router.navigate(['']);
+  }
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
 }
